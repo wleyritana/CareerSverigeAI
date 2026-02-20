@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Executive Dashboard</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+
+<h1>Executive Dashboard</h1>
+<a href="/download"><button>Download DOCX Report</button></a>
+<a href="/download_cv"><button>Download Enhanced CV (.txt)</button></a>
+
+<div class="card">
+<h2>Hireability Score</h2>
+<div class="bar"><div class="fill" style="width: {{ hire_score }}%">{{ hire_score }}%</div></div>
+</div>
+
+<div class="card">
+<h2>Recruiter Match Score</h2>
+<div class="bar"><div class="fill secondary" style="width: {{ match_score }}%">{{ match_score }}%</div></div>
+</div>
+
+<h2>Requirement Intelligence</h2><pre>{{ deep }}</pre>
+<h2>Recruiter Psychology</h2><pre>{{ psyche }}</pre>
+<h2>Optimized CV</h2><pre>{{ optimized }}</pre>
+<h2>ATS Audit</h2><pre>{{ ats }}</pre>
+<h2>ATS Submission CV</h2><pre>{{ ats_cv }}</pre>
+<h2>Interview Pack</h2><pre>{{ interview }}</pre>
+
+{% if culture %}
+<h2>Culture Analysis</h2><pre>{{ culture }}</pre>
+{% endif %}
+
+<a href="/">Run Again</a>
+
+</body>
+</html>
